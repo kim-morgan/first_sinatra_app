@@ -13,7 +13,13 @@ get '/myname' do
   "<b><i>Kim</i></b>"
 end
 
-get '/cat/' do
-  @names = ["Amigo", "Misty", "Almond", "Kim"].sample
+get '/random-cat' do
+  @name = ["Amigo", "Misty", "Almond", "Kim"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
